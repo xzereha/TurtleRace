@@ -2,33 +2,53 @@ import java.util.ArrayList;
 
 
 public class TurtleRace {
+	/**
+	 * Delay in ms
+	 */
+	private static final int DELAY = 30;
 	
-	public static void main(String[] args) {
-		/**
-		 * Delay in ms
-		 */
-		final int DELAY = 30;
-		
-		ArrayList<RaceTurtle> racingTurtles = new ArrayList<RaceTurtle>();
-		ArrayList<RaceTurtle> turtlesInGoal = new ArrayList<RaceTurtle>();
-		
-		RaceWindow w = new RaceWindow();
-		
-		//Creates all the turtles
+	private static RaceWindow w = new RaceWindow();
+	
+	private static ArrayList<RaceTurtle> racingTurtles = new ArrayList<RaceTurtle>();
+	private static ArrayList<RaceTurtle> turtlesInGoal = new ArrayList<RaceTurtle>();
+	
+	/**
+	 * Checks if the turtle has reached the goal
+	 */
+	static boolean inGoal(RaceTurtle t){
+		if(t.getX() >= RaceWindow.X_END_POS)return true;
+		return false;
+	}
+	
+	 /**
+	  * Fills the racingTutle array with RaceTutles
+	  */
+	static void createTutles(){
 		for (int i = 0; i < 8; i++) {
 			racingTurtles.add(new RaceTurtle(w, i+1));
 		}
-		
-		while (racingTurtles.size()>0){
-			for (int i = 0; i < racingTurtles.size(); i++){
-				racingTurtles.get(i).raceStep();
-				
-				//Moves the turtle to the winning list if it has reached the goal
-				if(racingTurtles.get(i).getX() >= RaceWindow.X_END_POS){
-					turtlesInGoal.add(racingTurtles.get(i));
-					racingTurtles.remove(i);
-				}
+	}
+	
+	/**
+	 * Moves all the turtles one step
+	 */
+	static void raceStep(){
+		for (int i = 0; i < racingTurtles.size(); i++){
+			racingTurtles.get(i).raceStep();
+			
+			//Moves the turtle to the winning list if it has reached the goal
+			if(inGoal(racingTurtles.get(i))){
+				turtlesInGoal.add(racingTurtles.get(i));
+				racingTurtles.remove(i);
 			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		createTutles();
+		while (racingTurtles.size()>0){
+			raceStep();
 			RaceWindow.delay(DELAY);
 		}
 		
