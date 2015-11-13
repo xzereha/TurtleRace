@@ -1,15 +1,18 @@
 import java.util.ArrayList;
 
-
+/**
+ * 
+ * @author XZereha
+ *
+ */
 public class TurtleRace {
-	/**
-	 * Delay in ms
-	 */
-	private static final int DELAY = 30;
+	/** Delay in ms */
+	protected static final int DELAY = 30;
 	
 	protected static RaceWindow w = new RaceWindow();
-	
+	/** Turtles still in the race */
 	protected static ArrayList<RaceTurtle> racingTurtles = new ArrayList<RaceTurtle>();
+	/** Turtles that have reached the goal in the order they finished */
 	protected static ArrayList<RaceTurtle> turtlesInGoal = new ArrayList<RaceTurtle>();
 	
 	/**
@@ -30,7 +33,7 @@ public class TurtleRace {
 	}
 	
 	/**
-	 * Moves all the turtles one step
+	 * Moves all the turtles one step and checks when they reach the goal
 	 */
 	static void raceStep(){
 		for (int i = 0; i < racingTurtles.size(); i++){
@@ -44,6 +47,15 @@ public class TurtleRace {
 		}
 	}
 	
+	/**
+	 * Prints the 1st, 2nd and 3rd place turtles
+	 */
+	public static void printWinners(){
+		System.out.println("På plats 1: " + turtlesInGoal.get(0));
+		System.out.println("På plats 2: " + turtlesInGoal.get(1));
+		System.out.println("På plats 3: " + turtlesInGoal.get(2));
+	}
+	
 	public static void main(String[] args) {
 		
 		createTutles();
@@ -52,9 +64,7 @@ public class TurtleRace {
 			RaceWindow.delay(DELAY);
 		}
 		
-		System.out.println("På plats 1: " + turtlesInGoal.get(0));
-		System.out.println("På plats 2: " + turtlesInGoal.get(1));
-		System.out.println("På plats 3: " + turtlesInGoal.get(2));
+		printWinners();
 	}
 	
 }
