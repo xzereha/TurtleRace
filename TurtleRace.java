@@ -7,10 +7,10 @@ public class TurtleRace {
 	 */
 	private static final int DELAY = 30;
 	
-	private static RaceWindow w = new RaceWindow();
+	protected static RaceWindow w = new RaceWindow();
 	
-	private static ArrayList<RaceTurtle> racingTurtles = new ArrayList<RaceTurtle>();
-	private static ArrayList<RaceTurtle> turtlesInGoal = new ArrayList<RaceTurtle>();
+	protected static ArrayList<RaceTurtle> racingTurtles = new ArrayList<RaceTurtle>();
+	protected static ArrayList<RaceTurtle> turtlesInGoal = new ArrayList<RaceTurtle>();
 	
 	/**
 	 * Checks if the turtle has reached the goal
@@ -52,9 +52,9 @@ public class TurtleRace {
 			RaceWindow.delay(DELAY);
 		}
 		
-		System.out.println("På plats 1: " + turtlesInGoal.get(1));
-		System.out.println("På plats 2: " + turtlesInGoal.get(2));
-		System.out.println("På plats 3: " + turtlesInGoal.get(3));
+		System.out.println("På plats 1: " + turtlesInGoal.get(0));
+		System.out.println("På plats 2: " + turtlesInGoal.get(1));
+		System.out.println("På plats 3: " + turtlesInGoal.get(2));
 	}
 	
 }
