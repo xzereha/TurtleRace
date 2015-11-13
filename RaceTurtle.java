@@ -1,5 +1,9 @@
 import java.util.Random;
-
+/**
+ * 
+ * @author XZereha
+ *
+ */
 public class RaceTurtle extends Turtle{
 	private int number;
 	private Random rand = new Random();
