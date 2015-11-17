@@ -6,12 +6,12 @@ import java.util.Random;
  */
 public class MultiTutleRace extends TurtleRace{
 
+	/**
+	 * Creates random turtles to fill the start line.
+	 */
 	static void createTutles(){
 		Random rand = new Random();
 		
-		/**
-		 * Creates random turtles to fill the start line.
-		 */
 		for (int i = 0; i < 8; i++) {
 			//Randomizes the turtles
 			int turtRand = rand.nextInt(5);
