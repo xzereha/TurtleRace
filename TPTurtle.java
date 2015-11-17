@@ -1,7 +1,7 @@
 import java.util.Random;
 /**
  * @author XZereha
- *	Olivers extremt op teleport turtle
+ *	Olivers extremt op teleport turtle, kommer troligtvis ändras till något annat då denna liknar mole väldigt mycket
  */
 
 public class TPTurtle extends RaceTurtle{
