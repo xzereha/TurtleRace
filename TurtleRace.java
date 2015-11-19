@@ -16,7 +16,8 @@ public class TurtleRace {
 	protected static ArrayList<RaceTurtle> turtlesInGoal = new ArrayList<RaceTurtle>();
 	
 	/**
-	 * Checks if the turtle has reached the goal
+	 * Kollar om Turtle är i mål
+	 * Om flera når målet samtidigt så är det den med lägst startposition som kommer först.
 	 */
 	static boolean inGoal(RaceTurtle t){
 		if(t.getX() >= RaceWindow.X_END_POS)return true;
@@ -24,7 +25,7 @@ public class TurtleRace {
 	}
 	
 	 /**
-	  * Fills the racingTutle array with RaceTutles
+	  * Skapar Turtles och fyller listan
 	  */
 	static void createTutles(){
 		for (int i = 0; i < 8; i++) {
@@ -33,7 +34,7 @@ public class TurtleRace {
 	}
 	
 	/**
-	 * Moves all the turtles one step and checks when they reach the goal
+	 * Flyttar alla Turtles ett steg och kollar om någon nått målet
 	 */
 	static void raceStep(){
 		for (int i = 0; i < racingTurtles.size(); i++){
@@ -48,7 +49,7 @@ public class TurtleRace {
 	}
 	
 	/**
-	 * Prints the 1st, 2nd and 3rd place turtles
+	 * Skriver ut 1:a, 2:a och 3:e plats.
 	 */
 	public static void printWinners(){
 		System.out.println("På plats 1: " + turtlesInGoal.get(0));
