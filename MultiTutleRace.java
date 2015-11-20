@@ -17,7 +17,7 @@ public class MultiTutleRace extends TurtleRace{
 			int turtRand = rand.nextInt(5);
 			switch(turtRand){
 				case 0 : racingTurtles.add(new RaceTurtle/*TODO Change to Absent minded*/(w, i+1)); break;  
-				case 1 : racingTurtles.add(new RaceTurtle/*TODO Change to Dizzy*/(w, i+1)); break;	
+				case 1 : racingTurtles.add(new DizzyTurtle(w, i+1, rand.nextInt(5)+1)); break;	
 				case 2 : racingTurtles.add(new RaceTurtle/*TODO Change to Mole*/(w, i+1)); break;	
 				case 3 : racingTurtles.add(new RaceTurtle/*TODO Change to something*/(w, i+1)); break;	
 				case 4 : racingTurtles.add(new TPTurtle(w, i+1, rand.nextInt(100)+1)); break;	
