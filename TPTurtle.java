@@ -8,7 +8,7 @@ public class TPTurtle extends RaceTurtle{
 
 	private int tpChance;
 	private Random rand = new Random();
-	private final int TP_DISTANCE = 7;
+	private final int TP_DISTANCE = 9;
 	
 	/**
 	 * @param w the RaceWindow to draw in
@@ -22,7 +22,8 @@ public class TPTurtle extends RaceTurtle{
 	
 	public void raceStep(){
 		if( (rand.nextInt(100)+1) <= tpChance)teleport();
-		else super.raceStep();
+		
+		else forward(rand.nextInt(3)+0);
 	}
 	
 	private void teleport(){
